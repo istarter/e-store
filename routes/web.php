@@ -21,8 +21,12 @@ Route::get('/', function () {
 
 Route::get('/home', 'MainController@index');
 Route::get('/dashboard-home', 'MainController@dashboard');
-Route::get('categories', 'CategoryController@index');
+Route::get('categories', 'CategoryController@index')->name('index');
 Route::post('store_category', 'CategoryController@store')->name('store.cat');
+Route::get('edit_cat/{category}', 'CategoryController@edit')->name('edit_cat');
+Route::post('/update_cat/{category}', 'CategoryController@update')->name('update');
+Route::get('/delete_cat/{category}', 'CategoryController@destroy')->name('delete.cat');
+
 
 
 
